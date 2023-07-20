@@ -539,6 +539,8 @@ def make_data_module(tokenizer: transformers.PreTrainedTokenizer, args) -> Dict:
 
     """
     def load_data(dataset_name):
+        if dataset_name == 'sutta':
+            return load_dataset("hdvd2309/buddhism_sutta")
         if dataset_name == 'alpaca':
             return load_dataset("tatsu-lab/alpaca")
         elif dataset_name == 'alpaca-clean':
